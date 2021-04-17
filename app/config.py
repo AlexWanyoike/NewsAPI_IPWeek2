@@ -2,10 +2,10 @@ class Config:
     '''
     General configuration parent class
     '''
-    NEW_API_BASE_URL =' https://newsapi.org/v2/everything?domains=wsj.com&apiKey={}'
+    NEW_API_BASE_URL =' https://api.themoviedb.org/3/movie/{}?api_key={}'
 
     #https://api.themoviedb.org/3/movie/{}?api_key={}
-
+    #https://newsapi.org/v2/everything?domains=wsj.com&apiKey={}
    
 
 class ProdConfig(Config):
