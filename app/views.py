@@ -5,13 +5,13 @@ from app import app
 # Views
 @app.route('/')
 def index():
-
+    
     '''
     View root page function that returns the index page and its data
     '''
 
-    message = 'Helllo Tomorrow '
-    return render_template('index.html',message = message)
+    title = 'NEWS API PROJECT'
+    return render_template('index.html', title = title)
 
 @app.route('/new/<new_id>')
 def new(new_id):
