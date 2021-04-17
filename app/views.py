@@ -10,7 +10,7 @@ def index():
     View root page function that returns the index page and its data
     '''
 
-    message = 'Into the badlands'
+    message = 'Helllo Tomorrow '
     return render_template('index.html',message = message)
 
 @app.route('/new/<new_id>')
