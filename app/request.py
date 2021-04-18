@@ -49,7 +49,42 @@ def process_results(new_list):
         content = new_content.ge('content')
 
         if poster:
-            new_object = New(id,name,author, description, content)
+            new_object = New(id,title,name,author, description, content)
             new_results.append(new_object)
 
     return new_results
+
+def get_new(id):
+    get_new_details_url = base_url.format(id,api_key)
+
+    with urllib.request.urlopen(get_new_details_url) as url:
+        new_details_data = url.read()
+        new_details_response = json.loads(new_details_data)
+
+        new_object = None
+        if new_details_response:
+            id = new_details_response.get('id')
+            title = new_details_response.get('original_title')
+            name = new_details_response.get('name')
+            author = new_details_response.get('author')
+            description = new_details_response.get('description')
+            content = new_details_response.get('content')
+
+            new_object = New(id,title ,name,author, description, content)
+
+    return new_object
+
+def search_new(new_name):
+    search_new_url = 'https://newsapi.org/v2/everything?domains=wsj.com&apiKey={}'.format(api_key,new_name)
+    with urllib.request.urlopen(search_new_url) as url:
+        search_new_data = url.read()
+        search_new_response = json.loads(search_new_data)
+
+        search_new_results = None
+
+        if search_new_response['results']:
+            search_new_list = search_new_response['results']
+            search_new_results = process_results(search_new_list)
+
+
+    return search_new_results
