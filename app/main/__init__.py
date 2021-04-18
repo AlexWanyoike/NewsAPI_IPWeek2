@@ -4,7 +4,7 @@ from .config import DevConfig
 from . import views, error
 
 # Initializing application
-app = Flask(__name__)
+app = Flask(__name__,instance_relative_config = True)
 
   # Creating the app configurations
     app.config.from_object(config_options[config_name])
