@@ -1,11 +1,13 @@
-from flask import render_template
-from app import app
-from .request import get_news, get_new, search_new
+from flask import render_template , request , redirect , url_for
+from ..request import get_news_source , get_news_sources
+from ..models import news_Article
+from . import main
+
 
 # Views
 # Views
 
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -28,7 +30,7 @@ def index():
     else:
         return render_template('index.html',title = title,general = general ,business = business, technology = technology,health=health,science=science,sports=sports)
 
-@app.route('/new/<int:id>')
+@main.route('/new/<int:id>')
 def new(id):
 
     '''
@@ -43,7 +45,7 @@ def new(id):
     return render_template('news_source.html',  title = title, id = newsid ,source = source ,content = content)
 n render_template('new.html',title = title,new = new)
 
-@app.route('/search/<movie_name>')
+@main.route('/search/<movie_name>')
 def search(new_name):
     '''
     View function to display the search results
