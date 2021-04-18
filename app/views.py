@@ -1,6 +1,6 @@
 from flask import render_template
 from app import app
-from .request import get_news, get_new
+from .request import get_news, get_new, search_new
 
 # Views
 # Views
@@ -29,4 +29,15 @@ def new(id):
     title = f'{new.title}'
 
     return render_template('new.html',title = title,new = new)
+
+@app.route('/search/<movie_name>')
+def search(new_name):
+    '''
+    View function to display the search results
+    '''
+    new_name_list = new_name.split(" ")
+    new_name_format = "+".join(new_name_list)
+    searched_news= search_new(new_name_format)
+    title = f'search results for {new_name}'
+    return render_template('search.html',news = searched_news)
 
