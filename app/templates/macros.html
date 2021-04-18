@@ -1,0 +1,33 @@
+{% macro displayNewsList(news_list) %}
+
+{% for source in news_list %}
+<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">    
+    <li class="text-center">
+            <h4>{{source.name}}</h4>
+            <h4>{{source.description}}</h4>
+            <h4>{{source.publishedAt}}</h4>
+            <a href="{{source.url}}"><h4>{{source.url}}</h4></a>
+            <a href="/source/{{source.id}}">{{ source.id|truncate(10)}}</a>
+    </li>
+</div>
+
+{% endfor %}
+
+{% endmacro %}
+
+{% macro displayArticlesList(articles_list) %}
+
+{% for article in articles_list %}
+<div class="col-xs-12 col-sm-4 col-md-2 col-lg-2 movie-card">    
+    <li class="text-center">
+        <!-- <a href="/source/{{source.id}}">
+            {{ source.id|truncate(10)}}</a> -->
+            <h4>{{article.author}}</h4>
+            <p>{{article.content}}</p>
+        <!-- <a href="{{source.url}}">click Here To Read</a> -->
+    </li>
+</div>
+
+{% endfor %}
+
+{% endmacro %}
