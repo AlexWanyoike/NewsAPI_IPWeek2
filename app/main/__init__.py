@@ -1,4 +1,5 @@
 from flask import Flask , Blueprint
+main = Blueprint('main',__name__)
 from flask_bootstrap import Bootstrap
 from .config import DevConfig
 from . import views, error
