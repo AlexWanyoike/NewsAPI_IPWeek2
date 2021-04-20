@@ -1,8 +1,8 @@
-from app import app
 import urllib.request,json
-from .models import new , news_Source
+from .models import news_Source
 
-New = new.New
+# Getting api key
+api_key = None
 
 # Getting the movie base url
 base_url = None
