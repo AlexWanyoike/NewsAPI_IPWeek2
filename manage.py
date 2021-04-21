@@ -1,8 +1,13 @@
-from app import create_app
+import os
+
+from app import create_app 
 from flask_script import Manager,Shell,Server
 
+
+
 # Creating app instance
-app = create_app('development')
+config_name = os.environ.get('APPS_SETTINGS')
+app = create_app(config_name)
 
 manager = Manager(app)
 manager.add_command('server',Server)

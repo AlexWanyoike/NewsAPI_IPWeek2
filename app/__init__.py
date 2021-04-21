@@ -1,7 +1,8 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
-from config import config_options
-from .auth.v1 import version1 as v1
+
+from instance.config import config_options
+
 
 bootstrap = Bootstrap()
 
