@@ -35,3 +35,9 @@ class DevConfig(Config):
     '''
 
     DEBUG = True
+
+app_config = {
+    'development' : DevConfig,
+    'production' : ProdConfig,
+    'config' : Config,
+}

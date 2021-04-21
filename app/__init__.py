@@ -1,6 +1,7 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
 from config import config_options
+from .auth.v1 import version1 as v1
 
 bootstrap = Bootstrap()
 
@@ -10,6 +11,7 @@ def create_app(config_name):
 
     # Creating the app configurations
     app.config.from_object(config_options[config_name])
+    app.config.from_pyfile('config.py')
     config_options[config_name].init_app(app)
     
     # Initializing flask extensions
