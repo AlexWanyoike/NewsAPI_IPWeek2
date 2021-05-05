@@ -47,4 +47,4 @@ alex.wanyoike12@gmail.com
 
 ## License
 This project is licensed by MIT License
-Copyright (c) Bavilion 2019
+Copyright (c) 2021 Alex Wanyoike

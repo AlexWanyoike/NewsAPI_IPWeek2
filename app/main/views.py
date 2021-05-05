@@ -4,7 +4,7 @@ from ..models import news_Article
 from . import main
 
 
-# Views
+
 # Views
 
 @main.route('/')
