@@ -19,7 +19,7 @@ In your terminal:
 ## Running the Application
 Creating the virtual environment
 
- * $ python3.6 -m venv --without-pip virtual
+ * $ python3.9 -m venv --without-pip virtual
  * $ source virtual/bin/env
   * $ curl https://bootstrap.pypa.io/get-pip.py | python
 * Installing flask
@@ -32,7 +32,7 @@ To run the application, in your terminal:
 ## Testing the Application
 To run the tests for the class files:
 
-  $ python3.6 manage.py test
+  $ python3.9 manage.py test
 
 ## Technologies Used
 This project was generated with
