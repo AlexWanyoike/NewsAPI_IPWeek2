@@ -1,6 +1,6 @@
 import unittest
-from models import new
-New = new.New
+from app.models import news_Article
+#New = new.New
 
 class NewTest(unittest.TestCase):
     '''
